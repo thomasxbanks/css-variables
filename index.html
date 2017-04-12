@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Css Variables</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {}
+
+        @media screen and (max-width: 599px) {
+             :root {
+                --baseline: 10px;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+             :root {
+                --baseline: 8px;
+            }
+        }
+
+
+
+        .night-theme {
+            --base-color: #444;
+            --invert-color: #fff;
+            --brand-color: #fade00;
+        }
+
+        .day-theme {
+            --base-color: #fff;
+            --invert-color: #444;
+            --brand-color: #af1d00;
+        }
+
+        body {
+            margin: 0;
+            background: var(--base-color);
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        #masthead {
+            background-color: var(--brand-color);
+            padding: calc(var(--baseline) * 2);
+        }
+
+        #masthead h1 {
+            color: var(--base-color);
+            padding: 0;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        #masthead h1 span {
+            float: right;
+            cursor: pointer;
+        }
+
+        main {
+            font-size: calc(var(--baseline) * 2);
+            color: var(--invert-color);
+            line-height: 1.7;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        main a {
+            color: var(--brand-color);
+        }
+
+        main p {
+            display: block;
+            margin: var(--baseline);
+            padding: 0;
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        #colophon {
+            background-color: var(--invert-color);
+            font-size: calc(var(--baseline) * 1.5);
+            color: var(--base-color);
+            padding: var(--baseline);
+        }
+    </style>
+</head>
+
+<body class="day-theme">
+    <header id="masthead">
+        <h1>
+            Title
+            <span class="material-icons">invert_colors</span>
+        </h1>
+    </header>
+    <main>
+        <img src="http://placecage.com/960/400" alt="Nicolas Cage">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum corrupti, obcaecati veniam doloribus doloremque. Nihil expedita aliquam blanditiis, nemo, fugiat, suscipit maxime eaque possimus soluta labore cum. Sequi, a, earum.</p>
+        <p>Qui non voluptatum quia quasi reprehenderit fugiat ullam totam vel. Qui vitae enim minus, vero ad necessitatibus adipisci inventore molestiae, voluptate, molestias soluta! Vitae officia culpa commodi, incidunt in possimus.</p>
+        <p>Repellendus corporis vitae doloribus deleniti vero ab <a href="/">voluptatibus nam quo dolore reprehenderit</a> maxime dicta, quod magni dolor in a! Repellat dolor soluta molestiae quasi rerum tempora recusandae nam quae non.</p>
+        <p>Harum minima, impedit deserunt perferendis illum explicabo minus molestias at reiciendis nisi obcaecati quod. Obcaecati molestias, praesentium totam molestiae tempore explicabo voluptate laboriosam, fuga nihil aspernatur nemo, dolorem cupiditate necessitatibus.</p>
+    </main>
+    <footer id="colophon">
+        &copy; 2017 company. All rights reserved.
+    </footer>
+    <script>
+        document.querySelector('.material-icons').addEventListener('click', () => {
+            let currentTheme = document.querySelector('body').getAttribute('class')
+            if (currentTheme === 'night-theme') {
+                document.querySelector('body').setAttribute('class', 'day-theme')
+            } else {
+                document.querySelector('body').setAttribute('class', 'night-theme')
+            }
+
+        })
+    </script>
+</body>
+
+</html>
