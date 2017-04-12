@@ -7,11 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        :root {}
+        :root {
+            --clr-dark: #222;
+            --clr-light: #eee;
+        }
+
+        .night-theme {
+            --base-color: var(--clr-dark);
+            --invert-color: var(--clr-light);
+            --brand-color: #fade00;
+        }
+
+        .day-theme {
+            --base-color: var(--clr-light);
+            --invert-color: var(--clr-dark);
+            --brand-color: #af1d00;
+        }
 
         @media screen and (max-width: 599px) {
              :root {
-                --baseline: 10px;
+                --baseline: 11px;
             }
         }
 
@@ -21,19 +36,6 @@
             }
         }
 
-
-
-        .night-theme {
-            --base-color: #444;
-            --invert-color: #fff;
-            --brand-color: #fade00;
-        }
-
-        .day-theme {
-            --base-color: #fff;
-            --invert-color: #444;
-            --brand-color: #af1d00;
-        }
 
         body {
             margin: 0;
